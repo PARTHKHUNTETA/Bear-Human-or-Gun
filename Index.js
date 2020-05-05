@@ -2,12 +2,8 @@
 // parameter of 'userInput'
 let getUsersChoice = function (userInput) {
     userInput = userInput.toLowerCase();
-    if (userInput == 'bear' || userInput == 'human' || userInput == 'gun') {
+    if (userInput == 'bear' || userInput == 'human' || userInput == 'gun')
         return userInput;
-    }
-    else {
-        console.log("Please Enter A Valid Option")
-    }
 }
 
 let getComputerChoice = function () {
@@ -64,12 +60,18 @@ let determineWinner = function (userChoice, ComputerChoice) {
 }
 
 let playGame = function () {
-    var promptUserChoice = prompt(" Please choose bear , human or gun ");
-    var userChoice = getUsersChoice(promptUserChoice);
-    var ComputerChoice = getComputerChoice();
-    console.log(`userChoice : ${userChoice}`);
-    console.log(`ComputerChoice : ${ComputerChoice}`);
-    console.log(determineWinner(userChoice, ComputerChoice));
+    let promptUserChoice = prompt(" Please choose bear , human or gun ");
+    let userChoice = getUsersChoice(promptUserChoice);
+    if (userChoice === 'bear' || userChoice === 'human' || userChoice === 'gun') {
+        var ComputerChoice = getComputerChoice();
+        console.log(`userChoice : ${userChoice}`);
+        console.log(`ComputerChoice : ${ComputerChoice}`);
+        console.log(determineWinner(userChoice, ComputerChoice));
+    }
+    else {
+        console.log("Please Enter A Valid Option");
+    }
+
 
 }
 
